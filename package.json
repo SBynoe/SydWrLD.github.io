@@ -8,19 +8,28 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
-  },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/headroom.js": "^0.12.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3"
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@adam.plesnik/tailwindcss-scroll-driven-animations": "^0.3.0",
+    "@heroicons/react": "^2.2.0",
+    "@icons-pack/react-simple-icons": "^13.1.0",
+    "@material-tailwind/react": "^2.1.10",
+    "next": "^15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-h5-audio-player": "^3.10.0",
+    "react-type-animation": "^3.2.0",
+    "simplex-noise": "^4.0.3",
+    "three": "^0.175.0"
   }
 }
