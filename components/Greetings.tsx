@@ -91,13 +91,17 @@ const Greetings = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-[50%] w-full p-4 h-max">
+        <div className="flex flex-col max-w-[50%] w-full p-4 h-max">
+          <p className="text-center md:text-5xl sm:text-4xl font-bold mb-0 bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
+            Music Showcase:
+          </p>
+          <span className="text-center text-xs">Brent X Cole</span>
+
           <Showcase />
         </div>
       </div>
       <div className="justify-items-center mb-8 pb-8">
-      <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 w-[75%] justify-items-center" />
-
+        <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 w-[75%] justify-items-center" />
       </div>
     </main>
   );

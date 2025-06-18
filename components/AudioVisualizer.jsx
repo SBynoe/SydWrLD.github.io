@@ -206,7 +206,7 @@ const AudioVisual = ({
 
       const icosahedronGeometry = new THREE.IcosahedronGeometry(14, 7);
       const lambertMaterial = new THREE.MeshLambertMaterial({
-        color: 0x39ff14,
+        color: 0x082202,
         wireframe: true,
       });
 
