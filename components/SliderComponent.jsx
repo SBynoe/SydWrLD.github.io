@@ -11,8 +11,8 @@ const SliderComponent = React.forwardRef(
             <div key={index} className="">
               <div id="item">
                 <div id="title" className="title">
-                  <p>Showcase: </p>
-                  {song.title}
+                  {/* <p>Showcase: </p>
+                  {song.title} */}
                 </div>
                 <audio className="audio" src={song.src}></audio>
                 <AudioPlayer

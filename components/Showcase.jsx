@@ -4,7 +4,7 @@ import AudioVisual from "./AudioVisualizer";
 
 const Showcase = () => {
   const songs = [
-    { title: "Shawty X Dodo Steve", src: "../songs/Brent X Cole.wav" },
+    { title: "Brent X Cole", src: "../songs/Brent X Cole.wav" },
   ];
 
   return (

@@ -2,11 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GameImage from "../public/images/PATH_OF_ARTIFACTS.png";
+import { Carousel } from "@material-tailwind/react";
+
 
 const Projects = () => {
   return (
-    <div className="bg-gray-950 bg-opacity-10 min-w-max h-auto text-white justify-items-center flex-col">
-      <div className="items-center text-4xl pt-3">
+    <div className="bg-gradient-to-r from-stone-500 to-stone-700 min-w-max h-auto text-white justify-items-center flex-col">
+      <div className="items-center text-4xl pt-3 bg-gradient-to-r from-stone-900 to-stone-800 bg-clip-text text-transparent">
         Projects
         <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
       </div>
@@ -41,7 +43,9 @@ const Projects = () => {
             <p>Link</p>
           </Link>
         </div>
+       
       </div>
+      
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Carousel from "@/components/Carousel";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -10,14 +11,13 @@ const Greetings = dynamic(() => import("../components/Greetings"));
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-stone-500 to-stone-700">
       {/* <Showcase />  */}
       <Navigation />
       <Greetings />
       <Experience />
       <Skills />
-      <Projects />
-      <Contact/>
+      <Carousel />
       <Footer />
     </div>
   );
