@@ -5,8 +5,6 @@ import { TypeAnimation } from "react-type-animation";
 import {
   SiGithub,
   SiGmail,
-  SiLinkerd,
-  SiReact,
 } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 const Showcase = dynamic(() => import("../components/Showcase"));
@@ -44,8 +42,8 @@ const Greetings = () => {
             </div>
             <div>
               <p>
-                Hey, I'm Syd Bynoe. I'm a Computer Science graduate from Georgia
-                State.
+                Hey, I&apos;m Syd Bynoe. I&apos;m a Computer Science graduate
+                from Georgia State.
               </p>
               <p> I am open to work all rolls!</p>
             </div>

@@ -4,6 +4,8 @@ import Scroll from "./Scroll";
 const Skills = () => {
   return (
     <div className="relative bg-gradient-to-r from-stone-500 to-stone-700 bg-opacity-10 text-white flex items-center justify-center flex-col h-auto w-full pb-7">
+      <section id="Experience"> </section>
+
       <div className="justify-items-center">
         <Scroll>
           <div className="items-center text-4xl justify-center bg-gradient-to-r from-stone-900 to-stone-800 bg-clip-text text-transparent">

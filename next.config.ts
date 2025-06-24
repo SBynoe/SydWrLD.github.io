@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import next from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -9,4 +10,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -1,8 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import GameImage from "../public/images/PATH_OF_ARTIFACTS.png";
-import { Carousel } from "@material-tailwind/react";
 
 
 const Projects = () => {

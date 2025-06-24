@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Navigation = () => {
@@ -28,27 +29,32 @@ const Navigation = () => {
 
   return (
     <>
-      <div className={` fixed z-50 text-white flex items-center w-full mx-auto h-18 px-4 text-lg
-       bg-neutral-900 transition-transform duration-300 ${ isVisible ? "translate-y-0": "-translate-y-full"}`}>
+      <div
+        className={` fixed z-50 text-white flex items-center w-full mx-auto h-18 px-4 text-lg
+       bg-neutral-900 transition-transform duration-300 ${
+         isVisible ? "translate-y-0" : "-translate-y-full"
+       }`}
+      >
         <h1 className="text-3xl font-bold text-white ml-4">SYDS WRLD</h1>
         <ul className="hidden md:flex pl-9">
           <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/">Home</a>
+            <Link href={"/"}>Home</Link>
+            {/* <a href="/">Home</a> */}
           </li>
           <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/#Projects">Projects</a>
+            <a href="#Projects">Projects</a>
           </li>
           <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/#Experience">Experience</a>
+            <a href="#Experience">Experience</a>
           </li>
           <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/#About">About</a>
+            <a href="#About">About</a>
           </li>
+          {/* <li className="p-2 hover:text-stone-500 transition-colors duration-300">
+            <a href="#Contact">Contact</a>
+          </li> */}
           <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/#Contact">Contact</a>
-          </li>
-          <li className="p-2 hover:text-stone-500 transition-colors duration-300">
-            <a href="/#Music">Music</a>
+            <a href="#Music">Music</a>
           </li>
         </ul>
       </div>

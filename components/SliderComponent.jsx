@@ -1,6 +1,5 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
-// import "react-h5-audio-player/lib/myStyles.css";
 import "react-h5-audio-player/lib/myStyles.css";
 
 const SliderComponent = React.forwardRef(
@@ -33,5 +32,5 @@ const SliderComponent = React.forwardRef(
     );
   }
 );
-
+SliderComponent.displayName = "SliderComponent";
 export default SliderComponent;

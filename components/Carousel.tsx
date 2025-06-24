@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
-import { useDrag } from "@use-gesture/react";
+import { useSpring } from "react-spring";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -42,9 +41,8 @@ const projectItems = [
 
 const Carousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [slideIndex, setSlideIndex] = useState(0);
-  const totalSlides = projectItems.length;
-  const [slideWidth, setSlideWidth] = useState(0);
+  const [slideIndex] = useState(0);
+  // const [slideWidth, setSlideWidth] = useState(0);
 
   const [{ x }, api] = useSpring(() => ({ x: 0 }));
 
@@ -52,32 +50,16 @@ const Carousel = () => {
   useEffect(() => {
     if (containerRef.current) {
       const width = containerRef.current.offsetWidth / 3;
-      setSlideWidth(width);
+      // setSlideWidth(width);
       api.start({ x: -slideIndex * width });
+      console.log(x);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerRef.current?.offsetWidth]);
 
-  const updateSlide = (direction: number) => {
-    let newIndex = slideIndex + direction;
-    if (newIndex < 0) newIndex = 0;
-    else if (newIndex > totalSlides - 3) newIndex = totalSlides - 3;
-    setSlideIndex(newIndex);
-    api.start({ x: -newIndex * slideWidth });
-  };
-
-  const bind = useDrag(({ down, movement: [mx] }) => {
-    if (!down) {
-      if (mx < -50 && slideIndex < totalSlides - 3) updateSlide(1);
-      else if (mx > 50 && slideIndex > 0) updateSlide(-1);
-      else api.start({ x: -slideIndex * slideWidth });
-    } else {
-      api.start({ x: -slideIndex * slideWidth + mx });
-    }
-  });
-
   return (
     <div className="justify-items-center pt-8">
+      <section id="Projects"> </section>
       <div className="w-1/2">
         <div className="text-center text-4xl bg-gradient-to-r from-stone-900 to-stone-800 bg-clip-text text-transparent pt-5">
           Projects
@@ -89,7 +71,7 @@ const Carousel = () => {
         ref={containerRef}
         className="flex flex-row relative w-full overflow-hidden mt-10 h-[500PX] justify-items-center justify-center"
       >
-        {projectItems.map((project, i) => (
+        {projectItems.map((project) => (
           <li
             key={project.id}
             className="flex-none w-[400px] h-[400px] p-2 list-none"

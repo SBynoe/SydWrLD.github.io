@@ -8,7 +8,7 @@ import React, {
 import * as THREE from "three";
 import { createNoise3D } from "simplex-noise";
 import SliderComponent from "./SliderComponent";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 let audioContext = null;
 let source;
@@ -18,11 +18,6 @@ let audioElement;
 
 const AudioVisual = ({
   songs,
-  // activeIndex,
-  onPlayClick,
-  onPauseClick,
-  // onPrev,
-  // onNext,
 }) => {
   const containerRef = useRef(null);
   const [context, setContext] = useState(null);
@@ -34,7 +29,7 @@ const AudioVisual = ({
   const [dataArray, setDataArray] = useState(null);
   const [animationId, setAnimationId] = useState(null);
   const [sceneInitialized, setSceneInitialized] = useState(false);
-  var controls;
+  // var controls;
 
   const audioPlayerRef = useRef(null);
 
@@ -71,7 +66,7 @@ const AudioVisual = ({
           alpha: true,
           antialias: true,
         });
-        controls = new OrbitControls(camera, renderer.domElement);
+        // controls = new OrbitControls(camera, renderer.domElement);
 
         renderer.setSize(width, height);
         renderer.render(scene, camera);
@@ -242,15 +237,15 @@ const AudioVisual = ({
         );
 
         const lowerMax = Math.max(...lowerHalfArray);
-        const lowerAvg =
-          lowerHalfArray.reduce((a, b) => a + b) / lowerHalfArray.length;
-        const upperMax = Math.max(...upperHalfArray);
+        // const lowerAvg =
+        //   lowerHalfArray.reduce((a, b) => a + b) / lowerHalfArray.length;
+        // const upperMax = Math.max(...upperHalfArray);
         const upperAvg =
           upperHalfArray.reduce((a, b) => a + b) / upperHalfArray.length;
 
         const lowerMaxFr = lowerMax / lowerHalfArray.length;
-        const lowerAvgFr = lowerAvg / lowerHalfArray.length;
-        const upperMaxFr = upperMax / upperHalfArray.length;
+        // const lowerAvgFr = lowerAvg / lowerHalfArray.length;
+        // const upperMaxFr = upperMax / upperHalfArray.length;
         const upperAvgFr = upperAvg / upperHalfArray.length;
 
         makeRoughGround(plane, modulate(upperAvgFr, 0, 1, 0.5, 4));

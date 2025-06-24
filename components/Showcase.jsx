@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useCallback } from "react";
+import React from "react";
 import AudioVisual from "./AudioVisualizer";
 
 const Showcase = () => {
