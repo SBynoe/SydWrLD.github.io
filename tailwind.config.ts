@@ -13,6 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+  
   },
   plugins: [
     require('@adam.plesnik/tailwindcss-scroll-driven-animations'),

@@ -12,11 +12,11 @@ const Showcase = dynamic(() => import("../components/Showcase"));
 const Greetings = () => {
   return (
     <main>
-      <div className="flex items-center justify-center w-full min-h-screen bg-gradient-to-r from-stone-500 to-stone-700 px-4">
-        <div className="mt-6 mr-11 mb-11 min-h-[440px] max-w-[50%]">
-          <div className="py-5 text-white h-auto flex flex-col md:gap-6 gap-12 px-10 mx-11 justify-left">
+      <div className="flex items-center justify-center w-full min-h-screen bg-gradient-to-r from-stone-500 to-stone-700 px-4 sm:flex-col sm:pt-10 sm:text-center xxs:flex-col xxs:pt-10 md:text-left md:flex-row md:gap-[250px] md:pl-5">
+        <div className="mt-6 mr-11 mb-11 md:mr-0 md:mb-0 sm:mr-0 sm:mb-0 min-h-[440px] lg:max-w-[50%] md:w-[500px] sm:w-[450px] md:justify-start">
+          <div className="py-5 text-white h-auto flex flex-col md:gap-6 gap-12 px-10 mx-11 justify-left md:px-0 md:mx-2 sm:px-0 sm:mx-2 ">
             <div className="flex-col my-auto md:mx-0">
-              <p className="md:text-5xl sm:text-4xl font-bold mb-0 bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
+              <p className="text-5xl font-bold mb-0 bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
                 Syd.WrLD
               </p>
               <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
@@ -47,7 +47,7 @@ const Greetings = () => {
               </p>
               <p> I am open to work all rolls!</p>
             </div>
-            <div className="grid grid-cols-3 row-span-1 gap-10 w-3">
+            <div className="grid grid-cols-3 row-span-1 gap-10 w-3 md:w-auto md:justify-items-center sm:w-auto sm:justify-items-center">
               <Link href={"https://github.com/SBynoe"}>
                 <SiGithub />
               </Link>
@@ -58,9 +58,9 @@ const Greetings = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
-                  width="100"
-                  height="100"
-                  viewBox="0,0,256,256"
+                  width="24px"
+                  height="24px"
+                  viewBox="0,0,70,70"
                 >
                   <g
                     fill="#ffffff"

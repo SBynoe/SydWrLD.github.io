@@ -6,6 +6,7 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 export default function App() {
   return (
@@ -18,25 +19,31 @@ export default function App() {
         >
           <SwiperSlide className="flex justify-center items-center">
             <div className="">
-              <img
+              <Image
+                width={500}
+                height={400}
                 src="/images/grad_pic.jpg"
-                className="h-full object-cover block mb-[700px]"
+                className="h-full object-cover block mb-[700px] rounded-lg"
                 alt="Grad Pic"
               />
             </div>
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
-            <img
+            <Image
+              width={500}
+              height={400}
               src="/images/Earthtones_Spring_2024.jpg"
-              className="h-full object-cover"
+              className="h-full object-cover rounded-lg"
               alt="Earthtones"
             />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center items-center">
             <div>
-              <img
+              <Image
+                width={500}
+                height={400}
                 src="/images/close_up_bass_shot.jpg"
-                className="h-full object-cover"
+                className="h-full object-cover rounded-lg"
                 alt="Bass Shot"
               />
             </div>

@@ -69,12 +69,12 @@ const Carousel = () => {
 
       <div
         ref={containerRef}
-        className="flex flex-row relative w-full overflow-hidden mt-10 h-[500PX] justify-items-center justify-center"
+        className="flex md:flex-row relative w-full overflow-hidden mt-10 h-[500PX] justify-items-center justify-center"
       >
         {projectItems.map((project) => (
           <li
             key={project.id}
-            className="flex-none w-[400px] h-[400px] p-2 list-none"
+            className="flex-none lg:w-[400px] lg:h-[400px] sm:w-[200px] sm:h-[200px] p-2 list-none"
           >
             <Link href={project.link} passHref>
               <div className="group relative w-full aspect-square overflow-hidden rounded-lg border-2 border-transparent bg-black  transition">

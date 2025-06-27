@@ -10,10 +10,7 @@ const SliderComponent = React.forwardRef(
           {songs.map((song, index) => (
             <div key={index} className="">
               <div id="item">
-                <div id="title" className="title">
-                  {/* <p>Showcase: </p>
-                  {song.title} */}
-                </div>
+                <div id="title" className="title"></div>
                 <audio className="audio" src={song.src}></audio>
                 <AudioPlayer
                   key={index}

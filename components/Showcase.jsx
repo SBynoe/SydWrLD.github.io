@@ -8,7 +8,7 @@ const Showcase = () => {
   ];
 
   return (
-    <div className="showcase">
+    <div className="showcase md:min-w-[575px]">
       <AudioVisual songs={songs} />
     </div>
   );

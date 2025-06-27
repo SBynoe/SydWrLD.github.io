@@ -7,6 +7,8 @@ import React, {
 } from "react";
 import * as THREE from "three";
 import { createNoise3D } from "simplex-noise";
+import { createNoise2D } from "simplex-noise";
+
 import SliderComponent from "./SliderComponent";
 // import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
@@ -16,9 +18,7 @@ let newAnalyser;
 let ball;
 let audioElement;
 
-const AudioVisual = ({
-  songs,
-}) => {
+const AudioVisual = ({ songs }) => {
   const containerRef = useRef(null);
   const [context, setContext] = useState(null);
   const [analyser, setAnalyser] = useState(null);
@@ -34,6 +34,8 @@ const AudioVisual = ({
   const audioPlayerRef = useRef(null);
 
   const noise = useMemo(() => createNoise3D(), []);
+  const noise2D = createNoise2D();
+
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
@@ -58,7 +60,6 @@ const AudioVisual = ({
 
         camera.position.set(0, 0, 100);
         camera.lookAt(scene.position);
-        camera.rotation.z += Math.PI / 2;
 
         camera.updateProjectionMatrix();
 
@@ -66,8 +67,6 @@ const AudioVisual = ({
           alpha: true,
           antialias: true,
         });
-        // controls = new OrbitControls(camera, renderer.domElement);
-
         renderer.setSize(width, height);
         renderer.render(scene, camera);
 
@@ -77,6 +76,7 @@ const AudioVisual = ({
 
         setIsInitialized(true);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     };
 
     init();
@@ -113,7 +113,10 @@ const AudioVisual = ({
     ) {
       setupScene();
       setSceneInitialized(true);
+      
     }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [scene, camera, renderer, analyser, dataArray, sceneInitialized]);
 
   const handleResize = useCallback(() => {
@@ -122,6 +125,7 @@ const AudioVisual = ({
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [camera, renderer]);
 
   const startAudioContext = useCallback(() => {
@@ -186,22 +190,26 @@ const AudioVisual = ({
     if (scene && camera && renderer && analyser && dataArray) {
       const group = new THREE.Group();
 
-      const planeGeometry = new THREE.PlaneGeometry(800, 800, 50, 50);
-      const planeMaterial = new THREE.MeshLambertMaterial({
-        color: 0x60002f,
+      var planeGeometry = new THREE.PlaneGeometry(800, 800, 20, 20);
+      var planeMaterial = new THREE.MeshLambertMaterial({
+        color: 0x80731d,
         side: THREE.DoubleSide,
         wireframe: true,
       });
 
-      const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+      var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+      plane.rotation.x = -0.5 * Math.PI;
       plane.position.set(0, 30, 0);
+      group.add(plane);
 
-      const plane2 = new THREE.Mesh(planeGeometry, planeMaterial);
+      var plane2 = new THREE.Mesh(planeGeometry, planeMaterial);
+      plane2.rotation.x = -0.5 * Math.PI;
       plane2.position.set(0, -30, 0);
+      group.add(plane2);
 
       const icosahedronGeometry = new THREE.IcosahedronGeometry(14, 7);
       const lambertMaterial = new THREE.MeshLambertMaterial({
-        color: 0x082202,
+        color: 0xfde08f,
         wireframe: true,
       });
 
@@ -215,7 +223,8 @@ const AudioVisual = ({
         spotLight.intensity = 0.9;
         spotLight.position.set(-10, 40, 20);
         spotLight.lookAt(ball);
-        spotLight.castShadow = false;
+        spotLight.castShadow = true;
+        scene.add(spotLight);
         scene.add(group);
       }
       ball.position.set(0, 0, 0);
@@ -236,12 +245,12 @@ const AudioVisual = ({
           dataArray.length - 1
         );
 
+        // const overallAvg = avg(dataArray);
         const lowerMax = Math.max(...lowerHalfArray);
-        // const lowerAvg =
-        //   lowerHalfArray.reduce((a, b) => a + b) / lowerHalfArray.length;
-        // const upperMax = Math.max(...upperHalfArray);
-        const upperAvg =
-          upperHalfArray.reduce((a, b) => a + b) / upperHalfArray.length;
+
+        // const lowerAvg = avg(lowerHalfArray);
+        // const upperMax = max(upperHalfArray);
+        const upperAvg = avg(upperHalfArray);
 
         const lowerMaxFr = lowerMax / lowerHalfArray.length;
         // const lowerAvgFr = lowerAvg / lowerHalfArray.length;
@@ -256,6 +265,7 @@ const AudioVisual = ({
           modulate(upperAvgFr, 0, 1, 0, 4)
         );
 
+        group.rotation.y += 0.005;
         renderer.render(scene, camera);
         const newAnimationId = requestAnimationFrame(render);
         setAnimationId(newAnimationId);
@@ -273,7 +283,7 @@ const AudioVisual = ({
       vertex.fromBufferAttribute(positionAttribute, i);
 
       const offset = mesh.geometry.parameters.radius;
-      const amp = 5;
+      const amp = 2; //former: 5
       const time = window.performance.now();
       vertex.normalize();
       const rf = 0.00001;
@@ -299,42 +309,29 @@ const AudioVisual = ({
   };
 
   const makeRoughGround = (mesh, distortionFr) => {
-    const positionAttribute = mesh.geometry.getAttribute("position");
-    const originalPositions = mesh.geometry.attributes.position.clone(); // Store original positions
+    const geometry = mesh.geometry;
+    const position = geometry.attributes.position;
+
+    const amp = 2;
+    const time = Date.now();
+
     const vertex = new THREE.Vector3();
 
-    const time = window.performance.now();
-    const amp = 2;
-    const rf = 0.0001; // Increased from 0.00001
+    for (let i = 0; i < position.count; i++) {
+      vertex.fromBufferAttribute(position, i);
 
-    for (let i = 0; i < positionAttribute.count; i++) {
-      // Get original position (before any previous distortions)
-      vertex.fromBufferAttribute(originalPositions, i);
-
-      // Calculate noise-based displacement
       const distance =
-        1 + // Start from 1 to maintain base shape
-        noise(
-          vertex.x + time * rf * 3,
-          vertex.z + time * rf * 2 // Using z instead of y for ground plane
-        ) *
-          amp *
-          distortionFr;
+        (noise2D(vertex.x + time * 0.0003, vertex.y + time * 0.0001) + 0) *
+        distortionFr *
+        amp;
 
-      if (!isNaN(distance)) {
-        // Apply displacement while preserving original direction
-        vertex.multiplyScalar(distance);
-        positionAttribute.setXYZ(
-          i,
-          vertex.x,
-          originalPositions.getY(i),
-          vertex.z
-        );
-      }
+      vertex.z = distance;
+
+      position.setXYZ(i, vertex.x, vertex.y, vertex.z);
     }
 
-    positionAttribute.needsUpdate = true; // Crucial!
-    mesh.geometry.computeVertexNormals(); // Update lighting
+    position.needsUpdate = true;
+    geometry.computeVertexNormals();
   };
 
   return (
@@ -344,13 +341,13 @@ const AudioVisual = ({
       style={{
         position: "relative",
         width: "100%",
-        //height: "350px", // Fixed height to match container
         height: "100%",
         background:
-          "linear-gradient(135deg, hsla(242, 86%, 6%, 1), rgb(79, 98, 0))",
+          "linear-gradient(135deg, hsla(242, 86%, 6%, 1), rgb(49, 61, 0))", //old:rgb(79, 98, 0)
         color: "hsla(242, 86%, 6%, 1)",
+
         overflow: "hidden",
-        borderRadius: "8px", // Optional: adds rounded corners
+        borderRadius: "8px",
       }}
     >
       <div
@@ -359,22 +356,18 @@ const AudioVisual = ({
           position: "relative",
           width: "100%",
           height: "400px",
-          pointerEvents: "auto", // Ensures interaction works
+          pointerEvents: "auto",
         }}
       />
 
       {/* SliderComponent nested within AudioVisual */}
       <SliderComponent
         songs={songs}
-        // activeIndex={activeIndex}
         onPlayClick={handlePlayClick}
         onPauseClick={handlePauseClick}
-        // onPrev={onPrev}
-        // onNext={onNext}
         ref={audioPlayerRef}
         style={{
           position: "absolute",
-          // bottom: "20px",
           width: "100%",
           zIndex: 10,
         }}
@@ -389,5 +382,18 @@ const modulate = (val, minVal, maxVal, outMin, outMax) => {
   const fr = fractionate(val, minVal, maxVal);
   return outMin + fr * (outMax - outMin);
 };
+
+const avg = (arr) => {
+  const total = arr.reduce(function (sum, b) {
+    return sum + b;
+  });
+  return total / arr.length;
+};
+
+// const max = (arr) => {
+//   return arr.reduce(function (a, b) {
+//     return Math.max(a, b);
+//   });
+// };
 
 export default AudioVisual;

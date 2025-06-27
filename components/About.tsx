@@ -17,7 +17,7 @@ const About = () => {
             <div className="w-1/3 p-2 text-center">
               <Scroll>
                 <p>
-                  I'm a Spring 2025 college graduate from Georgia State
+                  I&#39;m a Spring 2025 college graduate from Georgia State
                   University. My primary interests are in full-stack
                   development. Outside of work, I am a music producer who works
                   in Fruit Loops Studio and Ableton Live 11. I am also a bassist
@@ -28,8 +28,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="justify-items-center">
+      <div className="justify-items-center mb-10 pb-10">
         <AboutImages />
+      </div>
+      <div className="justify-items-center mb-8 pb-8">
+        <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 w-[75%] justify-items-center" />
       </div>
     </div>
   );
