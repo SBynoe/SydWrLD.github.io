@@ -22,7 +22,7 @@ export default function App() {
               <Image
                 width={500}
                 height={400}
-                src="/images/grad_pic.jpg"
+                src="./images/grad_pic.jpg"
                 className="h-full object-cover block mb-[700px] rounded-lg"
                 alt="Grad Pic"
               />
@@ -32,7 +32,7 @@ export default function App() {
             <Image
               width={500}
               height={400}
-              src="/images/Earthtones_Spring_2024.jpg"
+              src="./images/Earthtones_Spring_2024.jpg"
               className="h-full object-cover rounded-lg"
               alt="Earthtones"
             />
@@ -42,7 +42,7 @@ export default function App() {
               <Image
                 width={500}
                 height={400}
-                src="/images/close_up_bass_shot.jpg"
+                src="./images/close_up_bass_shot.jpg"
                 className="h-full object-cover rounded-lg"
                 alt="Bass Shot"
               />

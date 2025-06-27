@@ -8,7 +8,7 @@ const projectItems = [
   {
     id: 1,
     name: "Path of Artifacts",
-    imageUrl: "/images/PATH_OF_ARTIFACTS.png",
+    imageUrl: "./images/PATH_OF_ARTIFACTS.png",
     link: "https://undrscor.itch.io/path-of-artifacts",
     desc: "2D platformer web game build in Rust",
     lang: "(Rust, Bevy, LDTK)",
@@ -16,7 +16,7 @@ const projectItems = [
   {
     id: 2,
     name: "Budget Smart",
-    imageUrl: "/images/homeback.jpg",
+    imageUrl: "./images/homeback.jpg",
     link: "https://www.budgetsmart.us",
     desc: "Budgeting app for individuals and groups",
     lang: "(Vue, Supabase)",
@@ -24,7 +24,7 @@ const projectItems = [
   {
     id: 3,
     name: "NashWorld",
-    imageUrl: "/images/bass.png",
+    imageUrl: "./images/bass.png",
     link: "https://www.nashwrld.us",
     desc: "Music educational Web app",
     lang: "(Typescript, React, Tailwind)",
@@ -32,7 +32,7 @@ const projectItems = [
   {
     id: 4,
     name: "Pitch Turning Algorithm",
-    imageUrl: "/images/tuner.png",
+    imageUrl: "./images/tuner.png",
     link: "https://github.com/nataniatedla/Pitch-Tuning-Algorithm",
     desc: "AI pitch detection GUI",
     lang: "(Python)",
