@@ -1,0 +1,58 @@
+.rhap_container {
+    background-color: #001800; /* Deep purple-black */
+    box-shadow: 0 0 10px 2px #723c13aa; /* Pumpkin glow */
+    color: #f3e5ab;
+  }
+  
+  .rhap_time {
+    color: #a57d71;
+  }
+  
+  .rhap_progress-bar {
+    background-color: #f2f2f2;
+  }
+  
+  .rhap_progress-filled {
+    background-color: #a57d71;
+  }
+  
+  .rhap_download-progress {
+    background-color: #a57d71;
+  }
+  
+  .rhap_progress-indicator {
+    background: #f3e5ab;
+    box-shadow: 0 0 6px #a57d71;
+  }
+  
+  .rhap_main-controls-button,
+  .rhap_volume-button,
+  .rhap_repeat-button {
+    color: #f3e5ab; /* Bone white */
+  }
+  
+  .rhap_play-pause-button {
+    width: "32px";
+        height: "32px";
+
+    color: #a57d71;
+  }
+  
+  .rhap_volume-bar {
+    background: #444;
+  }
+  
+  .rhap_volume-filled {
+    background-color: #f3e5ab;
+  }
+  
+  .rhap_volume-indicator {
+    background: #f3e5ab;
+    box-shadow: 0 0 5px #a57d71;
+  }
+  
+  .rhap_button-clear:hover {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  
