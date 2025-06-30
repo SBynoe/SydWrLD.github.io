@@ -90,7 +90,7 @@ const Greetings = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex flex-col items-center px-4">
+        <div className="w-full md:w-1/2 flex flex-col items-center px-4 mt-9">
           <p className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent text-center md:text-left">
             Music Showcase:
           </p>

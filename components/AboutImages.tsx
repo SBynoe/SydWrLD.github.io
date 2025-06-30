@@ -20,7 +20,7 @@ export default function App() {
           <SwiperSlide className="flex justify-center items-center">
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/images/grad_pic.jpg"
+                src="./images/grad_pic.jpg"
                 alt="Grad Pic"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -32,7 +32,7 @@ export default function App() {
           <SwiperSlide className="flex justify-center items-center">
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/images/Earthtones_Spring_2024.jpg"
+                src="./images/Earthtones_Spring_2024.jpg"
                 alt="Earthtones"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -44,7 +44,7 @@ export default function App() {
           <SwiperSlide className="flex justify-center items-center">
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/images/close_up_bass_shot.jpg"
+                src="./images/close_up_bass_shot.jpg"
                 alt="Bass Shot"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
