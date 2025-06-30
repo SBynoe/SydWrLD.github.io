@@ -47,6 +47,7 @@ const Projects = () => {
   useEffect(() => {
     if (containerRef.current) {
       const width = containerRef.current.offsetWidth / 3;
+      console.log(x);
       api.start({ x: -slideIndex * width });
     }
   }, [slideIndex, api]);
