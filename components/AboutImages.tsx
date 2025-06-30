@@ -10,41 +10,45 @@ import Image from "next/image";
 
 export default function App() {
   return (
-    <div className="flex justify-center items-center w-full">
-      <div className="w-[500px] h-[400px]">
+    <div className="flex justify-center items-center w-full px-4">
+      <div className="w-full max-w-[90%] sm:max-w-md md:max-w-lg lg:max-w-2xl">
         <Swiper
           navigation={true}
           modules={[Navigation]}
-          className="h-full w-full"
+          className="w-full"
         >
           <SwiperSlide className="flex justify-center items-center">
-            <div className="">
+            <div className="relative w-full aspect-[4/3]">
               <Image
-                width={500}
-                height={400}
-                src="./images/grad_pic.jpg"
-                className="h-full object-cover block mb-[700px] rounded-lg"
+                src="/images/grad_pic.jpg"
                 alt="Grad Pic"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>
+
           <SwiperSlide className="flex justify-center items-center">
-            <Image
-              width={500}
-              height={400}
-              src="./images/Earthtones_Spring_2024.jpg"
-              className="h-full object-cover rounded-lg"
-              alt="Earthtones"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center">
-            <div>
+            <div className="relative w-full aspect-[4/3]">
               <Image
-                width={500}
-                height={400}
-                src="./images/close_up_bass_shot.jpg"
-                className="h-full object-cover rounded-lg"
+                src="/images/Earthtones_Spring_2024.jpg"
+                alt="Earthtones"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex justify-center items-center">
+            <div className="relative w-full aspect-[4/3]">
+              <Image
+                src="/images/close_up_bass_shot.jpg"
                 alt="Bass Shot"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>

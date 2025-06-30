@@ -2,26 +2,24 @@
 import dynamic from "next/dynamic";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import {
-  SiGithub,
-  SiGmail,
-} from "@icons-pack/react-simple-icons";
+import { SiGithub, SiGmail } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
+
 const Showcase = dynamic(() => import("../components/Showcase"));
 
 const Greetings = () => {
   return (
-    <main>
-      <div className="flex items-center justify-center w-full min-h-screen bg-gradient-to-r from-stone-500 to-stone-700 px-4 sm:flex-col sm:pt-10 sm:text-center xxs:flex-col xxs:pt-10 md:text-left md:flex-row md:gap-[250px] md:pl-5">
-        <div className="mt-6 mr-11 mb-11 md:mr-0 md:mb-0 sm:mr-0 sm:mb-0 min-h-[440px] lg:max-w-[50%] md:w-[500px] sm:w-[450px] md:justify-start">
-          <div className="py-5 text-white h-auto flex flex-col md:gap-6 gap-12 px-10 mx-11 justify-left md:px-0 md:mx-2 sm:px-0 sm:mx-2 ">
-            <div className="flex-col my-auto md:mx-0">
-              <p className="text-5xl font-bold mb-0 bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
+    <main className="w-full">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen bg-gradient-to-r from-stone-500 to-stone-700 px-4 pt-10 gap-12">
+        <div className="w-full md:w-1/2 flex flex-col justify-center gap-8 px-4">
+          <div className="text-white flex flex-col gap-6">
+            <div>
+              <p className="text-4xl sm:text-5xl sm:pt-10 sm: mt-10 font-bold bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
                 Syd.WrLD
               </p>
-              <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+              <hr className="my-4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
 
-              <div className="pt-1 pb-3 font-semibold text-3xl text-neutral-800">
+              <div className="text-2xl sm:text-3xl font-semibold text-neutral-800">
                 <TypeAnimation
                   sequence={[
                     "Front-end Programmer",
@@ -35,18 +33,20 @@ const Greetings = () => {
                   ]}
                   wrapper="span"
                   speed={35}
-                  style={{ fontSize: "1em", display: "inline-block" }}
+                  style={{ display: "inline-block" }}
                   repeat={Infinity}
                 />
               </div>
             </div>
-            <div>
+
+            <div className="text-base sm:text-lg">
               <p>
                 Hey, I&apos;m Syd Bynoe. I&apos;m a Computer Science graduate
                 from Georgia State.
               </p>
-              <p> I am open to work all rolls!</p>
+              <p>I am open to work all roles!</p>
             </div>
+
             <div className="grid grid-cols-3 row-span-1 gap-10 w-3 md:w-auto md:justify-items-center sm:w-auto sm:justify-items-center">
               <Link href={"https://github.com/SBynoe"}>
                 <SiGithub />
@@ -89,17 +89,20 @@ const Greetings = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col max-w-[50%] w-full p-4 h-max">
-          <p className="text-center md:text-5xl sm:text-4xl font-bold mb-0 bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent">
+
+        <div className="w-full md:w-1/2 flex flex-col items-center px-4">
+          <p className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-stone-900 to-stone-700 bg-clip-text text-transparent text-center md:text-left">
             Music Showcase:
           </p>
-          <span className="text-center text-xs">Brent X Cole</span>
-
+          <span className="text-xs text-white mb-2 text-center md:text-left">
+            Brent X Cole
+          </span>
           <Showcase />
         </div>
       </div>
-      <div className="justify-items-center mb-8 pb-8">
-        <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 w-[75%] justify-items-center" />
+
+      <div className="flex justify-center my-8">
+        <hr className="w-3/4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
       </div>
     </main>
   );

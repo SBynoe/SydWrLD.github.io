@@ -390,10 +390,4 @@ const avg = (arr) => {
   return total / arr.length;
 };
 
-// const max = (arr) => {
-//   return arr.reduce(function (a, b) {
-//     return Math.max(a, b);
-//   });
-// };
-
 export default AudioVisual;

@@ -4,35 +4,31 @@ import AboutImages from "@/components/AboutImages";
 
 const About = () => {
   return (
-    <div>
-      <div className="justify-items-center">
-        <Scroll>
-          <div className="items-center text-4xl justify-center bg-gradient-to-r from-stone-900 to-stone-800 bg-clip-text text-transparent">
-            About Me
-          </div>
-        </Scroll>
+    <div className="w-full flex flex-col items-center justify-center px-4">
+      <section id="About" />
+      <Scroll>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-center bg-gradient-to-r from-stone-900 to-stone-800 bg-clip-text text-transparent mt-8">
+          About Me
+        </h2>
+      </Scroll>
 
-        <div className=" justify-items-center">
-          <div className="flex p-2 gap-1 justify-center">
-            <div className="w-1/3 p-2 text-center">
-              <Scroll>
-                <p>
-                  I&#39;m a Spring 2025 college graduate from Georgia State
-                  University. My primary interests are in full-stack
-                  development. Outside of work, I am a music producer who works
-                  in Fruit Loops Studio and Ableton Live 11. I am also a bassist
-                  at my local church.
-                </p>
-              </Scroll>
-            </div>
-          </div>
-        </div>
+      <div className="w-full max-w-4xl mt-6">
+        <Scroll>
+          <p className="text-base sm:text-lg text-center text-white leading-relaxed">
+            I&apos;m a Spring 2025 college graduate from Georgia State
+            University. My primary interests are in full-stack development.
+            Outside of work, I am a music producer who works in FL Studio and
+            Ableton Live 11. I am also a bassist at my local church.
+          </p>
+        </Scroll>
       </div>
-      <div className="justify-items-center mb-10 pb-10">
+
+      <div className="w-full mt-8 mb-10">
         <AboutImages />
       </div>
-      <div className="justify-items-center mb-8 pb-8">
-        <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 w-[75%] justify-items-center" />
+
+      <div className="w-full flex justify-center mb-8">
+        <hr className="w-3/4 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
       </div>
     </div>
   );
