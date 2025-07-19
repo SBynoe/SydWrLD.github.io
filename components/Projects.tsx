@@ -25,7 +25,7 @@ const projectItems = [
     id: 3,
     name: "NashWorld",
     imageUrl: "./images/bass.png",
-    link: "https://www.nashwrld.us",
+    link: "https://portfolio-starter-kit-liard-eight.vercel.app",
     desc: "Music educational Web app",
     lang: "(Typescript, React, Tailwind)",
   },
